@@ -1,0 +1,25 @@
+import { StyleSheet, Text, View } from 'react-native'
+import React from 'react'
+import { createStackNavigator } from '@react-navigation/stack';
+import HomeKingsCrossLuggage from '../../../screen/App/Home/pages/HomeKingsCrossLuggage ';
+import HomeBooking from '../../../screen/App/Home/pages/HomeBooking';
+
+const Stack = createStackNavigator();
+
+const HomeStack = () => {
+  return (
+    <Stack.Navigator
+        initialRouteName="HomeKingsCrossLuggage"
+        screenOptions={{
+            headerShown: false
+        }}
+    >
+        <Stack.Screen name="HomeKingsCrossLuggage" component={HomeKingsCrossLuggage} />
+        <Stack.Screen name="HomeBooking" component={HomeBooking} />
+    </Stack.Navigator>
+  )
+}
+
+export default HomeStack
+
+const styles = StyleSheet.create({})
