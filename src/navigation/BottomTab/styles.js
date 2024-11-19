@@ -9,7 +9,6 @@ export const styles = StyleSheet.create({
     paddingTop: hp(1),
     alignItems: "center",
     justifyContent: "space-between",
-    // backgroundColor: 'red'
   },
   ActiveIconContainer: {
     // borderTopColor: Colors.brand["border"],

@@ -6,7 +6,6 @@ module.exports = {
       'module-resolver',
       {
         root: ['./src'], // This is the root folder of your source code
-        extensions: [".js", ".json", ".ts", ".tsx", ".jsx"],
         alias: {
           "@": "./src",
         },
