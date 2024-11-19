@@ -1,18 +1,14 @@
 module.exports = {
   presets: ['module:@react-native/babel-preset'],
   plugins: [
-    'react-native-reanimated/plugin',
+    'react-native-reanimated/plugin',  // Reanimated plugin must be last
     [
       'module-resolver',
       {
-        root: ['./src'], // Optional: This defines the root folder
+        root: ['./src'], // This is the root folder of your source code
+        extensions: [".js", ".json", ".ts", ".tsx", ".jsx"],
         alias: {
-          // '@': './src', // Aliasing for simpler imports
-          '@components': './src/components',
-          '@utils': './src/utils',
-          '@screen': './src/screen',
-          '@navigation': './src/navigation',
-          '@feature': './src/feature',
+          "@": "./src",
         },
       },
     ],

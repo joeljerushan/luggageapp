@@ -6,20 +6,17 @@ import HomeBooking from '../../../screens/App/Home/pages/HomeBooking';
 
 const Stack = createStackNavigator();
 
-const HomeStack = () => {
+const BookingStack = () => {
   return (
     <Stack.Navigator
-        initialRouteName="HomeKingsCrossLuggage"
+        initialRouteName="HomeBooking"
         screenOptions={{
             headerShown: false
         }}
     >
-        <Stack.Screen name="HomeKingsCrossLuggage" component={HomeKingsCrossLuggage} />
         <Stack.Screen name="HomeBooking" component={HomeBooking} />
     </Stack.Navigator>
   )
 }
 
-export default HomeStack
-
-const styles = StyleSheet.create({})
+export default BookingStack;

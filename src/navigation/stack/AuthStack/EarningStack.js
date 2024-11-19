@@ -6,7 +6,7 @@ import HomeBooking from '../../../screens/App/Home/pages/HomeBooking';
 
 const Stack = createStackNavigator();
 
-const HomeStack = () => {
+const EarningStack = () => {
   return (
     <Stack.Navigator
         initialRouteName="HomeKingsCrossLuggage"
@@ -20,6 +20,4 @@ const HomeStack = () => {
   )
 }
 
-export default HomeStack
-
-const styles = StyleSheet.create({})
+export default EarningStack;
