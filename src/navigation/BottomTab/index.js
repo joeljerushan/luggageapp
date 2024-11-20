@@ -1,20 +1,20 @@
 import { Text, View } from 'react-native'
 import React from 'react'
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import HomeStack from '../stack/AuthStack/HomeStack';
-import HomeSvg from '../../assets/svg/BottomSvg/Home.svg';
-import BookingSvg from '../../assets/svg/BottomSvg/Booking.svg';
-import DashBoardSvg from '../../assets/svg/BottomSvg/DashBoard.svg';
-import EarningSvg from '../../assets/svg/BottomSvg/Earning.svg';
-import AccountSvg from '../../assets/svg/BottomSvg/Account.svg';
+import HomeStack from '../stack/AppStack/HomeStack';
+import HomeSvg from '@/assets/icons/BottomSvg/Home.svg';
+import BookingSvg from '@/assets/icons/BottomSvg/Booking.svg';
+import DashBoardSvg from '@/assets/icons/BottomSvg/DashBoard.svg';
+import EarningSvg from '@/assets/icons/BottomSvg/Earning.svg';
+import AccountSvg from '@/assets/icons/BottomSvg/Account.svg';
 import { hp, wp } from "../../utils/Scaling";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { styles } from './styles';
-import BookingStack from '../stack/AuthStack/BookingStack';
-import DashBoardStack from '../stack/AuthStack/DashBoardStack';
-import EarningStack from '../stack/AuthStack/EarningStack';
+import BookingStack from '../stack/AppStack/BookingStack';
+import DashBoardStack from '../stack/AppStack/DashBoardStack';
+import EarningStack from '../stack/AppStack/EarningStack';
 import { ColorSheet } from '@/utils/ColorSheet';
-import AccountStack from '@/navigation/stack/AuthStack/AccountStack';
+import AccountStack from '../stack/AppStack/AccountStack';
 
 const Tab = createBottomTabNavigator()
 

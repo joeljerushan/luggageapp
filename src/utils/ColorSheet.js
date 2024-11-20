@@ -5,4 +5,8 @@ Black: '#000',
 Gray: '#494949',
 Error: '#FF0000',
 Success: '#00FF00',
+View: '#262626',
+Header: '#00A1FF',
+Title: '#121212',
+Text: '#989898',
 };
