@@ -5,10 +5,11 @@ import { ColorSheet } from "../../utils/ColorSheet";
 
 export const styles = StyleSheet.create({
   IconContainer: {
-    width: wp(17),
+    width: wp(20),
     paddingTop: hp(1),
     alignItems: "center",
     justifyContent: "space-between",
+    // backgroundColor: 'red'
   },
   ActiveIconContainer: {
     // borderTopColor: Colors.brand["border"],

@@ -13,8 +13,8 @@ import { styles } from './styles';
 import BookingStack from '../stack/AuthStack/BookingStack';
 import DashBoardStack from '../stack/AuthStack/DashBoardStack';
 import EarningStack from '../stack/AuthStack/EarningStack';
-import AccountStack from '../stack/AuthStack/AccountStack';
-import { ColorSheet } from '../../utils/ColorSheet';
+import { ColorSheet } from '@/utils/ColorSheet';
+import AccountStack from '@/navigation/stack/AuthStack/AccountStack';
 
 const Tab = createBottomTabNavigator()
 
