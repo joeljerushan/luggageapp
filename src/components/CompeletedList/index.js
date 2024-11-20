@@ -1,16 +1,10 @@
-import {
-  StyleSheet,
-  Text,
-  Touchable,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import {Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
-import {styles} from './styles';
 import CopySvg from '@/assets/icons/Home/Copy-Bold.svg';
+import {styles} from './styles';
 import PropTypes from 'prop-types';
 
-const ReadyToCheckInList = (props) => {
+const CompeletedList = props => {
   const {
     status,
     name,
@@ -35,12 +29,16 @@ const ReadyToCheckInList = (props) => {
           {/* Drop-off */}
           <View style={styles.commonContainer}>
             <Text style={styles.dataTitle}>{'Drop-off'}</Text>
-            <Text style={styles.dateText}>{`${dropOff?.time} - ${dropOff?.date}`}</Text>
+            <Text
+              style={
+                styles.dateText
+              }>{`${dropOff?.time} - ${dropOff?.date}`}</Text>
           </View>
           {/* Pick-up */}
           <View style={styles.commonContainer}>
-            <Text style={styles.dataTitle}>{`${pickUp?.time} - ${pickUp?.date}`}</Text>
-            <Text style={styles.dateText}>{'9.00 AM - 02/11'}</Text>
+            <Text style={styles.dataTitle}>{'Pick-up'}</Text>
+            <Text
+              style={styles.dateText}>{`${pickUp?.time} - ${pickUp?.date}`}</Text>
           </View>
         </View>
         {/* rowContainer ---- 2 */}
@@ -79,16 +77,14 @@ const ReadyToCheckInList = (props) => {
 
       {/* footer */}
       <View style={styles.footerContainer}>
-        <Text style={styles.footerText}>
-          {'James completed payment online 12 days ago'}
-        </Text>
+        <Text style={styles.footerText}>{description}</Text>x
       </View>
     </View>
   );
 };
 
 // Define Type Props
-ReadyToCheckInList.propTypes = {
+CompeletedList.propTypes = {
   status: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   dropOff: PropTypes.shape({
@@ -104,6 +100,6 @@ ReadyToCheckInList.propTypes = {
   days: PropTypes.string.isRequired,
   orderId: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-}
+};
 
-export default ReadyToCheckInList;
+export default CompeletedList;

@@ -6,6 +6,7 @@ import { ColorSheet } from "@/utils/ColorSheet";
 export const styles = StyleSheet.create({
     container: {
         width: '100%',
+        marginTop: hp(2),
         borderRadius: 15,
         backgroundColor: '#D9D9D9',
     },
@@ -16,7 +17,7 @@ export const styles = StyleSheet.create({
     header: {
         fontSize: RFValue(12),
         fontWeight: '700',
-        color: ColorSheet.Header,
+        color: ColorSheet.Compelete,
     },
     name: {
         fontSize: RFValue(14),
@@ -58,7 +59,7 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         borderBottomLeftRadius: 15,
         borderBottomRightRadius: 15,
-        backgroundColor: ColorSheet.Header,
+        backgroundColor: ColorSheet.Compelete,
     },
     footerText: {
         fontSize: RFValue(11),

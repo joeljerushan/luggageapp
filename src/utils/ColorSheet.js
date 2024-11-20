@@ -9,4 +9,7 @@ View: '#262626',
 Header: '#00A1FF',
 Title: '#121212',
 Text: '#989898',
+Header_01: '#15CF74',
+PaidCash: '#EF476F',
+Compelete: '#565656'
 };

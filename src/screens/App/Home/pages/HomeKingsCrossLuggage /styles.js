@@ -6,12 +6,16 @@ import { ColorSheet } from "@/utils/ColorSheet";
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: 'pink'
+        // backgroundColor: 'pink'
+    },
+    contentContainer: {
+        flexGrow: 1,
+        paddingBottom: hp(2)
     },
     mainContainer: {
         width :'100%',
         padding: hp(2),
-        backgroundColor: 'green'
+        // backgroundColor: 'green'
     },
     grayView: {
         width: '100%',
@@ -19,6 +23,6 @@ export const styles = StyleSheet.create({
         marginTop: hp(2),
         marginBottom: hp(3),
         borderRadius: 10,
-        backgroundColor: 'rgba(38,38,38,0.8)'
+        backgroundColor: 'rgba(38,38,38,0.2)'
     },
 });

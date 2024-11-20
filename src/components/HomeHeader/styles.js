@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        backgroundColor: 'red'
+        // backgroundColor: 'red'
     },
     notificationSearchContainer: {
         flex: 0.4,
@@ -20,7 +20,7 @@ export const styles = StyleSheet.create({
     title: {
         fontSize: RFValue(14),
         fontWeight: '700',
-        color: ColorSheet.Primary,
+        color: ColorSheet.View,
     },
     qrContainer: {
         flex: 0.35,

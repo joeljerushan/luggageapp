@@ -26,7 +26,7 @@ const BottomTab = () => {
         headerShown: false,
         tabBarActiveTintColor: 'white',
         tabBarStyle: {
-            height: wp(20) + insets.bottom,
+            height: wp(16) + insets.bottom,
             backgroundColor: ColorSheet.Gray,
         },
         tabBarItemStyle: {

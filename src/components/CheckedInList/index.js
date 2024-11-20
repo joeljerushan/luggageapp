@@ -1,18 +1,13 @@
-import {
-  StyleSheet,
-  Text,
-  Touchable,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import {Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
-import {styles} from './styles';
 import CopySvg from '@/assets/icons/Home/Copy-Bold.svg';
+import {styles} from './styles';
 import PropTypes from 'prop-types';
 
-const ReadyToCheckInList = (props) => {
-  const {
+const CheckedInList = (props) => {
+  const { 
     status,
+    type,
     name,
     dropOff,
     pickUp,
@@ -20,14 +15,28 @@ const ReadyToCheckInList = (props) => {
     totalAmount,
     days,
     orderId,
-    description,
-  } = props;
+    description
+   } = props;
   return (
     <View style={styles.container}>
       {/* data */}
       <View style={styles.dataContainer}>
         {/* header */}
-        <Text style={styles.header}>{status}</Text>
+        <View style={styles.headerContainer}>
+          <Text style={styles.header}>{status}</Text>
+          {/* Paid in shop */}
+          {type == 'paidInShop' && (
+            <View style={styles.paidInShopContainer}>
+              <Text style={styles.paidInShop}>{'Paid in Shop'}</Text>
+            </View>
+          )}
+          {/* Paid cash */}
+          {type == 'paidCash' && (
+            <View style={styles.paidCashContainer}>
+              <Text style={styles.paidCash}>{'Paid Cash'}</Text>
+            </View>
+          )}
+        </View>
         {/* Name */}
         <Text style={styles.name}>{name}</Text>
         {/* rowContainer- ----- 1 */}
@@ -39,8 +48,8 @@ const ReadyToCheckInList = (props) => {
           </View>
           {/* Pick-up */}
           <View style={styles.commonContainer}>
-            <Text style={styles.dataTitle}>{`${pickUp?.time} - ${pickUp?.date}`}</Text>
-            <Text style={styles.dateText}>{'9.00 AM - 02/11'}</Text>
+            <Text style={styles.dataTitle}>{'Pick-up'}</Text>
+            <Text style={styles.dateText}>{`${pickUp?.time} - ${pickUp?.date}`}</Text>
           </View>
         </View>
         {/* rowContainer ---- 2 */}
@@ -80,7 +89,7 @@ const ReadyToCheckInList = (props) => {
       {/* footer */}
       <View style={styles.footerContainer}>
         <Text style={styles.footerText}>
-          {'James completed payment online 12 days ago'}
+          {description}
         </Text>
       </View>
     </View>
@@ -88,8 +97,9 @@ const ReadyToCheckInList = (props) => {
 };
 
 // Define Type Props
-ReadyToCheckInList.propTypes = {
+CheckedInList.propTypes = {
   status: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   dropOff: PropTypes.shape({
     time: PropTypes.string.isRequired,
@@ -104,6 +114,6 @@ ReadyToCheckInList.propTypes = {
   days: PropTypes.string.isRequired,
   orderId: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-}
+};
 
-export default ReadyToCheckInList;
+export default CheckedInList;

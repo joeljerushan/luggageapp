@@ -13,7 +13,7 @@ export const styles = StyleSheet.create({
         backgroundColor: ColorSheet.View,
     },
     buttonContainer: {
-        flex: 0.31,
+        flex: 0.32,
         height: hp(5),
         alignItems: 'center',
         justifyContent: 'center',
@@ -22,5 +22,10 @@ export const styles = StyleSheet.create({
     activeButton: {
         borderRadius: 15,
         backgroundColor: ColorSheet.Gray,
+    },
+    text: {
+        fontSize: RFValue(11),
+        fontWeight: '600',
+        color: ColorSheet.Primary,
     },
 });
