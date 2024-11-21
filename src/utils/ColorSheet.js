@@ -11,5 +11,10 @@ Title: '#121212',
 Text: '#989898',
 Header_01: '#15CF74',
 PaidCash: '#EF476F',
-Compelete: '#565656'
+Compelete: '#565656',
+Description: '#121212',
+CardBg: '#D9D9D9',
+IconColor: '#EDEFFB',
+TableHeader: '#6C6C6C',
+TableBg: '#F6F6F6',
 };

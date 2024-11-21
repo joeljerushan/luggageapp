@@ -7,8 +7,6 @@ import {
 import React, { useState } from 'react';
 import {styles} from './styles';
 import HomeHeader from '../../../../../components/HomeHeader';
-import TabButton from '../../../../../components/HomeTabButton';
-import ReadyToCheckInList from '../../../../../components/ReadyToCheckInList';
 import HomeToday from '../HomeToday';
 import HomeUpComing from '../HomeUpcoming';
 import HomePast from '../HomePast';

@@ -10,7 +10,7 @@ import {styles} from './styles';
 import CopySvg from '@/assets/icons/Home/Copy-Bold.svg';
 import PropTypes from 'prop-types';
 
-const ReadyToCheckInList = (props) => {
+const ReadyToCheckInList = props => {
   const {
     id,
     status,
@@ -36,11 +36,17 @@ const ReadyToCheckInList = (props) => {
           {/* Drop-off */}
           <View style={styles.commonContainer}>
             <Text style={styles.dataTitle}>{'Drop-off'}</Text>
-            <Text style={styles.dateText}>{`${dropOff?.time} - ${dropOff?.date}`}</Text>
+            <Text
+              style={
+                styles.dateText
+              }>{`${dropOff?.time} - ${dropOff?.date}`}</Text>
           </View>
           {/* Pick-up */}
           <View style={styles.commonContainer}>
-            <Text style={styles.dataTitle}>{`${pickUp?.time} - ${pickUp?.date}`}</Text>
+            <Text
+              style={
+                styles.dataTitle
+              }>{`${pickUp?.time} - ${pickUp?.date}`}</Text>
             <Text style={styles.dateText}>{'9.00 AM - 02/11'}</Text>
           </View>
         </View>
@@ -80,9 +86,7 @@ const ReadyToCheckInList = (props) => {
 
       {/* footer */}
       <View style={styles.footerContainer}>
-        <Text style={styles.footerText}>
-          {description}
-        </Text>
+        <Text style={styles.footerText}>{description}</Text>
       </View>
     </View>
   );
@@ -106,6 +110,6 @@ ReadyToCheckInList.propTypes = {
   days: PropTypes.string.isRequired,
   orderId: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-}
+};
 
 export default ReadyToCheckInList;

@@ -9,6 +9,7 @@ const BookingReady = () => {
       {/* Ready To Check In */}
       <FlatList
         data={readyToCheckIn}
+        scrollEnabled={false}
         keyExtractor={item => item.id.toString()}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.contentContainer}

@@ -7,11 +7,11 @@ export const styles = StyleSheet.create({
     container: {
         width: '100%',
         borderRadius: 15,
-        backgroundColor: '#D9D9D9',
+        backgroundColor: ColorSheet.CardBg,
     },
     dataContainer: {
         padding: hp(2),
-        gap: 10,
+        gap: 15,
     },
     header: {
         fontSize: RFValue(12),
