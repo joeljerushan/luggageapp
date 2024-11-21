@@ -9,7 +9,7 @@ const App = () => {
   return (
     <SafeAreaProvider>  {/* Wrap the entire app with SafeAreaProvider */}
       <GestureHandlerRootView style={{ flex: 1 }}>
-        <StatusBar barStyle="light-content" />
+        <StatusBar barStyle='dark-content' />
         <FlashMessage
           position="top"
           floating

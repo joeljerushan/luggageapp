@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 
 const CheckedInList = (props) => {
   const { 
+    id,
     status,
     type,
     name,
@@ -20,7 +21,7 @@ const CheckedInList = (props) => {
   return (
     <View style={styles.container}>
       {/* data */}
-      <View style={styles.dataContainer}>
+      <View style={styles.dataContainer} key={id}>
         {/* header */}
         <View style={styles.headerContainer}>
           <Text style={styles.header}>{status}</Text>
@@ -98,6 +99,7 @@ const CheckedInList = (props) => {
 
 // Define Type Props
 CheckedInList.propTypes = {
+  id: PropTypes.string.isRequired,
   status: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,

@@ -1,19 +1,18 @@
-import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack';
-import HomeBooking from '../../../screens/App/Home/pages/HomeBooking';
+import BookingHome from '../../../screens/App/Booking/Pages/BookingHome';
 
 const Stack = createStackNavigator();
 
 const BookingStack = () => {
   return (
     <Stack.Navigator
-        initialRouteName="HomeBooking"
+        initialRouteName="BookingHome"
         screenOptions={{
             headerShown: false
         }}
     >
-        <Stack.Screen name="HomeBooking" component={HomeBooking} />
+        <Stack.Screen name="BookingHome" component={BookingHome} />
     </Stack.Navigator>
   )
 }

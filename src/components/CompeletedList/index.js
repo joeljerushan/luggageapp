@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 
 const CompeletedList = props => {
   const {
+    id,
     status,
     name,
     dropOff,
@@ -19,7 +20,7 @@ const CompeletedList = props => {
   return (
     <View style={styles.container}>
       {/* data */}
-      <View style={styles.dataContainer}>
+      <View style={styles.dataContainer} key={id}>
         {/* header */}
         <Text style={styles.header}>{status}</Text>
         {/* Name */}
@@ -85,6 +86,7 @@ const CompeletedList = props => {
 
 // Define Type Props
 CompeletedList.propTypes = {
+  id: PropTypes.string.isRequired,
   status: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   dropOff: PropTypes.shape({

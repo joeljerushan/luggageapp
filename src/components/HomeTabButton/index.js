@@ -3,8 +3,14 @@ import React, {useState} from 'react';
 import {styles} from './styles';
 import PropTypes from 'prop-types';
 
-const TabButton = props => {
-  const {activeTab, onTabPress} = props;
+const HomeTabButton = props => {
+  const {
+    leftTabNumber,
+    middleTabNumber,
+    rightTabNumber,
+    activeTab, 
+    onTabPress
+  } = props;
 
   return (
     <View style={styles.container}>
@@ -16,7 +22,7 @@ const TabButton = props => {
         ]}
         activeOpacity={0.5}
         onPress={() => onTabPress('today')}>
-        <Text style={styles.text}>Today 04</Text>
+        <Text style={styles.text}>Today {leftTabNumber}</Text>
       </TouchableOpacity>
       {/* Upcoming */}
       <TouchableOpacity
@@ -26,7 +32,7 @@ const TabButton = props => {
         ]}
         activeOpacity={0.5}
         onPress={() => onTabPress('upcoming')}>
-        <Text style={styles.text}>Upcoming 10</Text>
+        <Text style={styles.text}>Upcoming {middleTabNumber}</Text>
       </TouchableOpacity>
       {/* Past */}
       <TouchableOpacity
@@ -36,16 +42,19 @@ const TabButton = props => {
         ]}
         activeOpacity={0.5}
         onPress={() => onTabPress('past')}>
-        <Text style={styles.text}>Past 56</Text>
+        <Text style={styles.text}>Past {rightTabNumber}</Text>
       </TouchableOpacity>
     </View>
   );
 };
 
 // Define Type Props
-TabButton.propTypes = {
+HomeTabButton.propTypes = {
+  leftTabNumber: PropTypes.string,
+  middleTabNumber: PropTypes.string,
+  rightTabNumber: PropTypes.string,
   activeTab: PropTypes.string,
   onTabPress: PropTypes.func,
 };
 
-export default TabButton;
+export default HomeTabButton;

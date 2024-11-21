@@ -6,26 +6,22 @@ import { ColorSheet } from "@/utils/ColorSheet";
 export const styles = StyleSheet.create({
     container: {
         padding: hp(1),
+        marginTop: hp(2),
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'space-between',
+        justifyContent: 'center',
         borderRadius: 15,
-        backgroundColor: ColorSheet.View,
+        backgroundColor: 'rgba(38,38,38,0.2)',
     },
-    buttonContainer: {
-        flex: 0.32,
-        height: hp(5),
+    inputSearch: {
+        flex: 1,
+        height: hp(4),
+        marginLeft: wp(3),
         alignItems: 'center',
         justifyContent: 'center',
+        fontSize: RFValue(12),
+        fontWeight: '500',
+        color: ColorSheet.black,
         // backgroundColor: 'green'
-    },
-    activeButton: {
-        borderRadius: 15,
-        backgroundColor: ColorSheet.Gray,
-    },
-    text: {
-        fontSize: RFValue(11),
-        fontWeight: '600',
-        color: ColorSheet.Primary,
     },
 });

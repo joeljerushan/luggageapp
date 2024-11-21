@@ -12,6 +12,7 @@ import PropTypes from 'prop-types';
 
 const ReadyToCheckInList = (props) => {
   const {
+    id,
     status,
     name,
     dropOff,
@@ -25,7 +26,7 @@ const ReadyToCheckInList = (props) => {
   return (
     <View style={styles.container}>
       {/* data */}
-      <View style={styles.dataContainer}>
+      <View style={styles.dataContainer} key={id}>
         {/* header */}
         <Text style={styles.header}>{status}</Text>
         {/* Name */}
@@ -80,7 +81,7 @@ const ReadyToCheckInList = (props) => {
       {/* footer */}
       <View style={styles.footerContainer}>
         <Text style={styles.footerText}>
-          {'James completed payment online 12 days ago'}
+          {description}
         </Text>
       </View>
     </View>
@@ -89,6 +90,7 @@ const ReadyToCheckInList = (props) => {
 
 // Define Type Props
 ReadyToCheckInList.propTypes = {
+  id: PropTypes.string.isRequired,
   status: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   dropOff: PropTypes.shape({

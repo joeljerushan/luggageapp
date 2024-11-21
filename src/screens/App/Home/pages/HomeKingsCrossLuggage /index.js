@@ -7,11 +7,12 @@ import {
 import React, { useState } from 'react';
 import {styles} from './styles';
 import HomeHeader from '../../../../../components/HomeHeader';
-import TabButton from '../../../../../components/TabButton';
+import TabButton from '../../../../../components/HomeTabButton';
 import ReadyToCheckInList from '../../../../../components/ReadyToCheckInList';
 import HomeToday from '../HomeToday';
 import HomeUpComing from '../HomeUpcoming';
 import HomePast from '../HomePast';
+import HomeTabButton from '../../../../../components/HomeTabButton';
 
 const HomeKingsCrossLuggage = ({navigation}) => {
   const [activeTab, setActiveTab] = useState('today');
@@ -24,7 +25,10 @@ const HomeKingsCrossLuggage = ({navigation}) => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView showsVerticalScrollIndicator={false}>
+      <ScrollView 
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={styles.contentContainer}
+      >
         <View style={styles.mainContainer}>
           {/* Header */}
           <HomeHeader
@@ -39,7 +43,10 @@ const HomeKingsCrossLuggage = ({navigation}) => {
 
           </View>
           {/* Tab Button */}
-          <TabButton
+          <HomeTabButton
+            leftTabNumber={'02'}
+            middleTabNumber={'10'}
+            rightTabNumber={'56'}
             activeTab={activeTab}
             onTabPress={handleTabPress}
           />
