@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
     width: '100%',
     marginTop: hp(2),
     borderRadius: 15,
-    backgroundColor: ColorSheet.CardBg,
+    backgroundColor: ColorSheet.Secondary,
   },
   dataContainer: {
     padding: hp(2),
@@ -35,7 +35,7 @@ export const styles = StyleSheet.create({
   paidInShop: {
     fontSize: RFValue(10),
     fontWeight: '700',
-    color: ColorSheet.Primary,
+    color: ColorSheet.White,
   },
   paidCashContainer: {
     flex: 0.5,
@@ -48,7 +48,7 @@ export const styles = StyleSheet.create({
   paidCash: {
     fontSize: RFValue(10),
     fontWeight: '700',
-    color: ColorSheet.Primary,
+    color: ColorSheet.White,
   },
   name: {
     fontSize: RFValue(14),
@@ -95,6 +95,6 @@ export const styles = StyleSheet.create({
   footerText: {
     fontSize: RFValue(11),
     fontWeight: '700',
-    color: ColorSheet.Primary,
+    color: ColorSheet.White,
   },
 });

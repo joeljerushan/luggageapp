@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
     container: {
         width: '100%',
         borderRadius: 15,
-        backgroundColor: ColorSheet.CardBg,
+        backgroundColor: ColorSheet.Primary,
     },
     dataContainer: {
         padding: hp(2),
@@ -63,6 +63,6 @@ export const styles = StyleSheet.create({
     footerText: {
         fontSize: RFValue(11),
         fontWeight: '700',
-        color: ColorSheet.Primary,
+        color: ColorSheet.White,
     },
 });

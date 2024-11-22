@@ -64,6 +64,6 @@ export const styles = StyleSheet.create({
     footerText: {
         fontSize: RFValue(11),
         fontWeight: '700',
-        color: ColorSheet.Primary,
+        color: ColorSheet.White,
     },
 });

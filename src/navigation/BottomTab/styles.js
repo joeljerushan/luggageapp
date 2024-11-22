@@ -20,7 +20,7 @@ export const styles = StyleSheet.create({
     fontSize: RFValue(11),
     marginTop: hp(1),
     fontWeight: "400",
-    color: ColorSheet.Primary,
+    color: ColorSheet.White,
   },
 
   ActiveLabel: {

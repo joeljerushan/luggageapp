@@ -22,9 +22,10 @@ const ReadyToCheckInList = props => {
     days,
     orderId,
     description,
+    style,
   } = props;
   return (
-    <View style={styles.container}>
+    <View style={[styles.container,style]}>
       {/* data */}
       <View style={styles.dataContainer} key={id}>
         {/* header */}
@@ -110,6 +111,7 @@ ReadyToCheckInList.propTypes = {
   days: PropTypes.string.isRequired,
   orderId: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
+  style: PropTypes.object,
 };
 
 export default ReadyToCheckInList;

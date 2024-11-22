@@ -26,6 +26,6 @@ export const styles = StyleSheet.create({
   text: {
     fontSize: RFValue(11),
     fontWeight: '600',
-    color: ColorSheet.Primary,
+    color: ColorSheet.White,
   },
 });

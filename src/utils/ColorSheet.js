@@ -1,6 +1,7 @@
 export const ColorSheet = {
-Primary: '#fff',
-Secondary: '#D9D9D9',
+Primary: '#DCF2FF',
+Secondary: '#DFFFEF',
+White: '#fff',
 Black: '#000',
 Gray: '#494949',
 Error: '#FF0000',
@@ -17,4 +18,6 @@ CardBg: '#D9D9D9',
 IconColor: '#EDEFFB',
 TableHeader: '#6C6C6C',
 TableBg: '#F6F6F6',
+CustomerTitle: '#989898',
+TextInputTxtColor: '#808080',
 };
