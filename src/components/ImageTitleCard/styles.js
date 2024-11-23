@@ -6,15 +6,15 @@ import { ColorSheet } from "@/utils/ColorSheet";
 export const styles = StyleSheet.create({
     container: {
         marginTop: hp(2),
-        gap: 15,
+        gap: 20,
         flexDirection: 'row',
         alignItems: 'center',
         borderRadius: 15,
         // backgroundColor: 'rgba(38,38,38,0.2)',
     },
     image: {
-        width: hp(12),
-        height: hp(10),
+        width: hp(10),
+        height: hp(9),
         resizeMode: 'cover',
         borderRadius: 10,
     },

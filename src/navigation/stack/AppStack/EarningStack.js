@@ -7,13 +7,16 @@ import EarningTableScreen from '../../../screens/App/Earnings/Pages/EarningTable
 import Billing from '../../../screens/App/Earnings/Pages/Billing';
 import Notifications from '../../../screens/App/Earnings/Pages/Notification';
 import EarningStore01 from '../../../screens/App/Earnings/Pages/EarningStore01';
+import EarningCard from '../../../screens/App/Earnings/Pages/EarningCard';
+import EarningStore02 from '../../../screens/App/Earnings/Pages/EarningStore02';
+import EarningEmployee01 from '../../../screens/App/Earnings/Pages/EarningEmployee';
 
 const Stack = createStackNavigator();
 
 const EarningStack = () => {
   return (
     <Stack.Navigator
-        initialRouteName="EarningStore01"
+        initialRouteName="EarningEmployee01"
         screenOptions={{
             headerShown: false
         }}
@@ -23,6 +26,9 @@ const EarningStack = () => {
         <Stack.Screen name="Notifications" component={Notifications} />
 
         <Stack.Screen name="EarningStore01" component={EarningStore01} />
+        <Stack.Screen name="EarningCard" component={EarningCard} />
+        <Stack.Screen name='EarningStore02' component={EarningStore02}/>
+        <Stack.Screen name="EarningEmployee01" component={EarningEmployee01} />
     </Stack.Navigator>
   )
 }
