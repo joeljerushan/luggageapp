@@ -16,7 +16,7 @@ const EarningTableScreen = () => {
           {/* header */}
           <TopHeader title={'Earnings'} childFront={<BackArrow />} />
           {/* table */}
-          <EarningTable data={data} />
+          <EarningTable data={dataTable} />
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -25,7 +25,7 @@ const EarningTableScreen = () => {
 
 export default EarningTableScreen;
 
-const data = [
+const dataTable = [
   {
     id: 1,
     date: '05/11',
