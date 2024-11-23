@@ -2,12 +2,10 @@ import {FlatList, SafeAreaView, ScrollView, Text, View} from 'react-native';
 import React, {useState} from 'react';
 import TopHeader from '../../../../../components/TopHeader';
 import CustomDropDown from '../../../../../components/Input/CustomDropDown';
-import ImageTitleCard from '../../../../../components/ImageTitleCard';
 import DatePicker from '../../../../../components/Input/DatePicker';
 import {styles} from './styles';
-import AddOptionButton from '../../../../../components/Button/AddOptionButton';
 
-const EarningStore03 = () => {
+const EarningWebsite = () => {
   const [selectDay, setSelectDay] = useState({
     label: '',
     value: '',
@@ -19,24 +17,7 @@ const EarningStore03 = () => {
         contentContainerStyle={styles.contentContainerScroll}>
         <View style={styles.mainContainer}>
           {/* header */}
-          <TopHeader title={'Store'} />
-
-          {/* Image Title card */}
-          <ImageTitleCard
-            imageUri={userData.image}
-            title={userData.title}
-            description={userData.description}
-          />
-
-          {/* Option Button */}
-          {/* Earnings */}
-          <AddOptionButton title="Earnings" type="bag" />
-
-          {/* website */}
-          <AddOptionButton title="Website" type="bag" />
-
-          {/* Employee */}
-          <AddOptionButton title="Employee" type="bag" />
+          <TopHeader title={'Website'} />
 
           <View style={styles.dropDownCalendarContainer}>
             {/* DropDown */}
@@ -72,14 +53,7 @@ const EarningStore03 = () => {
   );
 };
 
-export default EarningStore03;
-
-const userData = {
-  image:
-    'https://cdn.telugu360.com/wp-content/uploads/2019/03/Mahesh-Babu-fans-not-happy-with-Sai-Pallavi.jpg',
-  title: 'Kings cross',
-  description: 'Luggage Storage',
-};
+export default EarningWebsite;
 
 const data = [
   {
@@ -99,37 +73,37 @@ const data = [
 const storeData = [
   {
     id: 1,
-    title: 'Total bags in the shop',
+    title: 'In Store orders',
     value: '10',
   },
   {
     id: 2,
-    title: 'Bags not collected',
+    title: 'Card orders',
     value: '10',
   },
   {
     id: 3,
-    title: 'Bags collected',
+    title: 'Cash orders',
     value: '10',
   },
   {
     id: 4,
-    title: 'Bags not collected',
-    value: '10',
+    title: 'Total paid',
+    value: '£352.46',
   },
   {
     id: 5,
-    title: 'Bags collected',
-    value: '10',
+    title: 'Total revenue',
+    value: '£291.16',
   },
   {
     id: 6,
-    title: 'Bags not collected',
+    title: 'Payment link',
     value: '10',
   },
   {
     id: 7,
-    title: 'Bags collected',
-    value: '10',
+    title: 'Added Insurance',
+    value: '£6.21',
   },
 ];

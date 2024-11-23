@@ -19,6 +19,7 @@ export const styles = StyleSheet.create({
   },
   dropDownCalendarContainer: {
     width: '100%',
+    marginBottom: hp(3),
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
@@ -29,7 +30,7 @@ export const styles = StyleSheet.create({
     flex: 0.85,
   },
   storeDataContainer: {
-    marginTop: hp(2),
+    marginBottom: hp(2),
     padding: hp(1.5),
     gap: 10,
     borderRadius: 10,
