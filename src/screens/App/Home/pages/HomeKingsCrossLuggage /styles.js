@@ -21,8 +21,15 @@ export const styles = StyleSheet.create({
         width: '100%',
         height: hp(30),
         marginTop: hp(2),
-        marginBottom: hp(3),
         borderRadius: 10,
         backgroundColor: 'rgba(38,38,38,0.2)'
+    },
+    cameraView: {
+        width: '100%',
+        height:'100%',
+        borderRadius: 10,
+    },
+    tabButton: {
+        marginTop: hp(3),
     },
 });

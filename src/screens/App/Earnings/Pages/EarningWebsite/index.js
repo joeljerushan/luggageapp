@@ -4,6 +4,7 @@ import TopHeader from '../../../../../components/TopHeader';
 import CustomDropDown from '../../../../../components/Input/CustomDropDown';
 import DatePicker from '../../../../../components/Input/DatePicker';
 import {styles} from './styles';
+import DropDrownView from '../../../../../components/Input/DropDownView';
 
 const EarningWebsite = () => {
   const [selectDay, setSelectDay] = useState({
@@ -21,7 +22,7 @@ const EarningWebsite = () => {
 
           <View style={styles.dropDownCalendarContainer}>
             {/* DropDown */}
-            <CustomDropDown
+            <DropDrownView
               style={styles.dropDownStyle}
               data={data}
               value={selectDay.value}

@@ -1,10 +1,9 @@
 import {FlatList, SafeAreaView, ScrollView, Text, View} from 'react-native';
 import React, {useState} from 'react';
 import TopHeader from '../../../../../components/TopHeader';
-import CustomDropDown from '../../../../../components/Input/CustomDropDown';
-import ImageTitleCard from '../../../../../components/ImageTitleCard';
 import DatePicker from '../../../../../components/Input/DatePicker';
 import {styles} from './styles';
+import DropDrownView from '../../../../../components/Input/DropDownView';
 
 const EarningEmployee01 = () => {
   const [selectDay, setSelectDay] = useState({
@@ -22,7 +21,7 @@ const EarningEmployee01 = () => {
 
           <View style={styles.dropDownCalendarContainer}>
             {/* DropDown */}
-            <CustomDropDown
+            <DropDrownView
               style={styles.dropDownStyle}
               data={data}
               value={selectDay.value}

@@ -9,11 +9,12 @@ const HomeTabButton = props => {
     middleTabNumber,
     rightTabNumber,
     activeTab, 
-    onTabPress
+    onTabPress,
+    style,
   } = props;
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, style]}>
       {/* Today */}
       <TouchableOpacity
         style={[
@@ -55,6 +56,7 @@ HomeTabButton.propTypes = {
   rightTabNumber: PropTypes.string,
   activeTab: PropTypes.string,
   onTabPress: PropTypes.func,
+  style: PropTypes.object
 };
 
 export default HomeTabButton;

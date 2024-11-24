@@ -86,7 +86,7 @@ const CompeletedList = props => {
 
 // Define Type Props
 CompeletedList.propTypes = {
-  id: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
   status: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   dropOff: PropTypes.shape({

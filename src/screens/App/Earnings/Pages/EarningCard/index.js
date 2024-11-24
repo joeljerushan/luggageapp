@@ -4,9 +4,9 @@ import TopHeader from '../../../../../components/TopHeader';
 import BackSvg from '@/assets/icons/ArrowSquareLeft-Linear.svg';
 import CardSvg from '@/assets/icons/CardPos-Outline.svg';
 import {styles} from './styles';
-import CustomDropDown from '../../../../../components/Input/CustomDropDown';
 import DatePicker from '../../../../../components/Input/DatePicker';
 import DataTimeVisibleCard from '../../../../../components/DataTimeVisibleCard';
+import DropDrownView from '../../../../../components/Input/DropDownView';
 
 const EarningCard = ({navigation}) => {
   const [selectDay, setSelectDay] = useState({
@@ -29,7 +29,7 @@ const EarningCard = ({navigation}) => {
 
           <View style={styles.dropDownCalendarContainer}>
             {/* DropDown */}
-            <CustomDropDown
+            <DropDrownView
               style={styles.dropDownStyle}
               data={data}
               value={selectDay.value}
