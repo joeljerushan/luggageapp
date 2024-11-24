@@ -1,17 +1,13 @@
-import { Image, SafeAreaView, StyleSheet, Text, View } from 'react-native'
+import { Image, SafeAreaView, Text, View } from 'react-native'
 import React, { useState } from 'react'
 import AddOptionButton from '../../../../../components/Button/AddOptionButton'
 import { styles } from './styles'
 import TopHeader from '../../../../../components/TopHeader'
 import BackArrow from '@/assets/icons/ArrowSquareLeft-Linear.svg';
 import QRSvg from '@/assets/icons/Home/ScanBarcode.svg'
-import CustomDropDown from '../../../../../components/Input/CustomDropDown'
 
 const DashBoardQrScreen = () => {
-  const [list, setList] = useState({
-    label: '',
-    value: '',
-  });
+
   return (
     <SafeAreaView style = {styles.root}>
       <View style = {styles.mainContainer}>
@@ -41,6 +37,7 @@ const DashBoardQrScreen = () => {
         type='money'
         onPress = {() => {}} 
       />
+      <Text></Text>
 
       </View>
     </SafeAreaView>

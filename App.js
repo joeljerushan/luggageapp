@@ -2,8 +2,8 @@ import {Platform, StatusBar, StyleSheet, View} from 'react-native';
 import React from 'react';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import FlashMessage from 'react-native-flash-message';
-import Routes from '@/navigation/routes';
 import { SafeAreaProvider } from 'react-native-safe-area-context';  // Import SafeAreaProvider
+import Routes from './src/navigation/routes';
 
 const App = () => {
   return (
@@ -22,5 +22,3 @@ const App = () => {
 };
 
 export default App;
-
-const styles = StyleSheet.create({});

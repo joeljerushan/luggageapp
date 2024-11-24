@@ -3,7 +3,7 @@ import React from 'react';
 import ReadyToCheckInList from '../../../../../../components/ReadyToCheckInList';
 import { styles } from './styles';
 
-const BookingReady = () => {
+const BookingChecked = () => {
   return (
     <View style={styles.container}>
       {/* Ready To Check In */}
@@ -35,7 +35,7 @@ const BookingReady = () => {
   );
 };
 
-export default BookingReady;
+export default BookingChecked;
 
 const readyToCheckIn = [
   {

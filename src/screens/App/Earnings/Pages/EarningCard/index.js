@@ -74,6 +74,7 @@ const EarningCard = ({navigation}) => {
               )
             }
           />
+          <Text></Text>
         </View>
       </ScrollView>
     </SafeAreaView>
