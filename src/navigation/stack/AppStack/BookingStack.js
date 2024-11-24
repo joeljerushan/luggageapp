@@ -11,20 +11,14 @@ const Stack = createStackNavigator();
 const BookingStack = () => {
   return (
     <Stack.Navigator
-        initialRouteName="BookingCheckedIn"
+        initialRouteName="BookingHome"
         screenOptions={{
             headerShown: false
         }}
     >
         <Stack.Screen name="BookingHome" component={BookingHome} />
         <Stack.Screen name="BookingCalendar" component={BookingCalendar} />
-        <Stack.Screen 
-          name="BookingConfirm" 
-          component={BookingConfirm} 
-          options={{ 
-            tabBarStyle: { display: 'none' } 
-          }} // Hide tab bar on BookingConfirm screen
-        />
+        <Stack.Screen name="BookingConfirm" component={BookingConfirm}/>
         <Stack.Screen name="BookingReadyToCheckIn" component={BookingReadyToCheckIn} />
         <Stack.Screen name="BookingCheckedIn" component={BookingCheckedIn} />
     </Stack.Navigator>

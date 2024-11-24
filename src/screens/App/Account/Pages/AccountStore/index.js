@@ -1,13 +1,19 @@
-import {FlatList, SafeAreaView, ScrollView, Text, View} from 'react-native';
+import {
+  FlatList,
+  SafeAreaView,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
 import React, {useState} from 'react';
 import TopHeader from '../../../../../components/TopHeader';
 import CustomDropDown from '../../../../../components/Input/CustomDropDown';
 import ImageTitleCard from '../../../../../components/ImageTitleCard';
 import DatePicker from '../../../../../components/Input/DatePicker';
 import {styles} from './styles';
-import AddOptionButton from '../../../../../components/Button/AddOptionButton';
 
-const EarningStore01 = () => {
+const AccountStore = () => {
   const [selectDay, setSelectDay] = useState({
     label: '',
     value: '',
@@ -27,16 +33,6 @@ const EarningStore01 = () => {
             title={userData.title}
             description={userData.description}
           />
-
-          {/* Option Button */}
-          {/* Earnings */}
-          <AddOptionButton title="Earnings" type="bag" />
-
-          {/* website */}
-          <AddOptionButton title="Website" type="bag" />
-
-          {/* Employee */}
-          <AddOptionButton title="Employee" type="bag" />
 
           <View style={styles.dropDownCalendarContainer}>
             {/* DropDown */}
@@ -72,7 +68,7 @@ const EarningStore01 = () => {
   );
 };
 
-export default EarningStore01;
+export default AccountStore;
 
 const userData = {
   image:

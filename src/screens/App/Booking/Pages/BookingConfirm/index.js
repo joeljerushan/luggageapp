@@ -6,24 +6,8 @@ import {styles} from './styles';
 import SuccessSvg from '@/assets/icons/Success.svg';
 import PrimaryButton from '../../../../../components/Button/PrimaryButton';
 import BookingComfirmedCard from '../../../../../components/BookingComfirmedCard';
-import { useNavigation } from '@react-navigation/native'; // Import navigation hook
 
-const BookingConfirm = () => {
-  const navigation = useNavigation();
-
-  useEffect(() => {
-    // Hide the bottom tab bar for this screen
-    navigation.setOptions({
-      tabBarStyle: { display: 'none' },
-    })
-    // Reset the tab bar visibility when the screen is unfocused or component is unmounted
-    return () => {
-      navigation.setOptions({
-        tabBarStyle: { display: 'flex' },
-      });
-    };
-  }, [navigation]);
-
+const BookingConfirm = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.root}>
       <ScrollView
@@ -31,7 +15,11 @@ const BookingConfirm = () => {
         contentContainerStyle={styles.contentContainerScroll}>
         <View style={styles.mainContainer}>
           {/* Header */}
-          <TopHeader title={'Booking'} childFront={<BackArrow />} />
+          <TopHeader 
+            title={'Booking'} 
+            childFront={<BackArrow />} 
+            onPressLeft={() => navigation.goBack()}
+          />
           {/* SuccessCard */}
           <View style={styles.successCard}>
             <SuccessSvg 
@@ -59,7 +47,9 @@ const BookingConfirm = () => {
             <PrimaryButton
               title="Done"
               onPress={() => {
-                console.log('Done');
+                navigation.navigate('HomeScreenStack', {
+                  screen: 'HomeKingsCrossLuggage',
+                });
               }}
             />
           </View>

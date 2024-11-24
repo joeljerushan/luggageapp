@@ -5,7 +5,7 @@ import TopHeader from '../../../../../components/TopHeader';
 import BackArrow from '@/assets/icons/ArrowSquareLeft-Linear.svg';
 import EarningTable from '../../../../../components/Table/EarningTable';
 
-const EarningTableScreen = () => {
+const EarningTableScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.root}>
       <ScrollView
@@ -14,7 +14,11 @@ const EarningTableScreen = () => {
       >
         <View style={styles.mainContainer}>
           {/* header */}
-          <TopHeader title={'Earnings'} childFront={<BackArrow />} />
+          <TopHeader 
+            title={'Earnings'} 
+            childFront={<BackArrow />}
+            onPressLeft={() => navigation.goBack()}
+          />
           {/* table */}
           <EarningTable data={dataTable} />
         </View>

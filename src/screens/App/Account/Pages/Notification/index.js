@@ -2,17 +2,15 @@ import {
   FlatList,
   SafeAreaView,
   ScrollView,
-  StyleSheet,
-  Text,
   View,
 } from 'react-native';
 import React from 'react';
 import BackArrow from '@/assets/icons/ArrowSquareLeft-Linear.svg';
 import TopHeader from '../../../../../components/TopHeader';
-import {styles} from './styles';
 import NotificationCard from '../../../../../components/NotificationCard';
+import { styles } from './styles';
 
-const Notifications = () => {
+const Notifications = ({navigation}) => {
   return (
     <SafeAreaView style={styles.root}>
       <ScrollView
@@ -20,7 +18,11 @@ const Notifications = () => {
         contentContainerStyle={styles.contentContainerScroll}>
         <View style={styles.mainContainer}>
           {/* header */}
-          <TopHeader title={'Notifications'} childFront={<BackArrow />} />
+          <TopHeader 
+            title={'Notifications'} 
+            childFront={<BackArrow />} 
+            onPressLeft={() => navigation.goBack()}
+          />
           {/* Notification */}
           <FlatList
             data={data}

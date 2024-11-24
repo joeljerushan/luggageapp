@@ -23,9 +23,16 @@ const ReadyToCheckInList = props => {
     orderId,
     description,
     style,
+    onPress,
+    disabled,
   } = props;
   return (
-    <View style={[styles.container,style]}>
+    <TouchableOpacity 
+      style={[styles.container,style]}
+      activeOpacity={0.5}
+      onPress={onPress}
+      disabled={disabled}
+    >
       {/* data */}
       <View style={styles.dataContainer} key={id}>
         {/* header */}
@@ -89,7 +96,7 @@ const ReadyToCheckInList = props => {
       <View style={styles.footerContainer}>
         <Text style={styles.footerText}>{description}</Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
@@ -112,6 +119,8 @@ ReadyToCheckInList.propTypes = {
   orderId: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   style: PropTypes.object,
+  onPress: PropTypes.func,
+  disabled: PropTypes.bool
 };
 
 export default ReadyToCheckInList;

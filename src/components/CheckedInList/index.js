@@ -16,10 +16,17 @@ const CheckedInList = (props) => {
     totalAmount,
     days,
     orderId,
-    description
+    description,
+    onPress,
+    disabled
    } = props;
   return (
-    <View style={styles.container}>
+    <TouchableOpacity 
+      style={styles.container}
+      activeOpacity={0.5}
+      onPress={onPress}
+      disabled={disabled}
+    >
       {/* data */}
       <View style={styles.dataContainer} key={id}>
         {/* header */}
@@ -93,7 +100,7 @@ const CheckedInList = (props) => {
           {description}
         </Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
@@ -116,6 +123,8 @@ CheckedInList.propTypes = {
   days: PropTypes.string.isRequired,
   orderId: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
+  onPress: PropTypes.func,
+  disabled: PropTypes.bool
 };
 
 export default CheckedInList;

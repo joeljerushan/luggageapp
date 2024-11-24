@@ -1,5 +1,5 @@
-import {SafeAreaView, ScrollView, StyleSheet, Text, View} from 'react-native';
-import React, {useEffect, useState} from 'react';
+import {SafeAreaView, ScrollView, View} from 'react-native';
+import React, { useState} from 'react';
 import TopHeader from '../../../../../components/TopHeader';
 import Notification from '@/assets/icons/Home/Notification.svg';
 import Calendar from '@/assets/icons/Calendar.svg';
@@ -8,7 +8,7 @@ import SearchInput from '../../../../../components/Input/SearchInput';
 import ReadyToCheckInList from '../../../../../components/ReadyToCheckInList';
 import CustomCalendar from '../../../../../components/CustomCalendar';
 
-const BookingCalendar = () => {
+const BookingCalendar = ({ navigation }) => {
   const [search, setSearch] = useState('');
 
   return (
@@ -44,6 +44,9 @@ const BookingCalendar = () => {
             days={data.days}
             orderId={data.orderId}
             description={data.description}
+            onPress={() => {
+              navigation.navigate('BookingReadyToCheckIn')
+            }}
           />
         </View>
       </ScrollView>

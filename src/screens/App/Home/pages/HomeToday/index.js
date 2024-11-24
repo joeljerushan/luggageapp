@@ -4,8 +4,10 @@ import ReadyToCheckInList from '../../../../../components/ReadyToCheckInList'
 import { styles } from './styles'
 import CheckedInList from '../../../../../components/CheckedInList'
 import CompeletedList from '../../../../../components/CompeletedList'
+import { useNavigation } from '@react-navigation/native'
 
 const HomeToday = () => {
+  const navigation = useNavigation();
   return (
     <View style = {styles.root}>
       {/* Ready To Check In List */}
@@ -20,6 +22,11 @@ const HomeToday = () => {
         days={readyToCheckIn.days}
         orderId={readyToCheckIn.orderId}
         description={readyToCheckIn.description}
+        onPress={() => {
+          navigation.navigate('BookingScreenStack',{
+              screen: 'BookingReadyToCheckIn',
+          });
+        }}
       />
       {/* Checked In */}
       <FlatList
@@ -38,6 +45,11 @@ const HomeToday = () => {
               days={item.days}
               orderId={item.orderId}
               description={item.description}
+              onPress={() => {
+                navigation.navigate('BookingScreenStack',{
+                    screen: 'BookingCheckedIn',
+                });
+              }}
             />
           )
         }}

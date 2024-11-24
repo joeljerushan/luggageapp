@@ -1,4 +1,4 @@
-import {FlatList, SafeAreaView, ScrollView, Text, View} from 'react-native';
+import {FlatList, SafeAreaView, ScrollView, Text, TouchableOpacity, View} from 'react-native';
 import React, {useState} from 'react';
 import TopHeader from '../../../../../components/TopHeader';
 import BackSvg from '@/assets/icons/ArrowSquareLeft-Linear.svg';
@@ -8,7 +8,7 @@ import CustomDropDown from '../../../../../components/Input/CustomDropDown';
 import DatePicker from '../../../../../components/Input/DatePicker';
 import DataTimeVisibleCard from '../../../../../components/DataTimeVisibleCard';
 
-const EarningCard = () => {
+const EarningCard = ({navigation}) => {
   const [selectDay, setSelectDay] = useState({
     label: '',
     value: '',
@@ -54,10 +54,23 @@ const EarningCard = () => {
                   data={item.timeData}
                 />
               ) : (
-                <View style={styles.storeDataContainer}>
+                <TouchableOpacity 
+                  style={styles.storeDataContainer}
+                  key={index}
+                  activeOpacity={0.5}
+                  onPress={() => {
+                    if (item.title == 'Total revenue') {
+                      navigation.navigate('EarningTableScreen')
+                    } else if (item.title == 'Per customer') {
+                      navigation.navigate('EarningTableScreen')
+                    } else {
+                      navigation.navigate('EarningOrders')
+                    }
+                  }}
+                >
                   <Text style={styles.storeDataTitle}>{item.title}</Text>
                   <Text style={styles.storeDataValue}>{item.value}</Text>
-                </View>
+                </TouchableOpacity>
               )
             }
           />

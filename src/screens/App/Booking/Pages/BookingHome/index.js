@@ -8,7 +8,7 @@ import BookingReady from './BookingReady';
 import BookingExpired from './BookingExpired';
 import SearchInput from '../../../../../components/Input/SearchInput';
 
-const BookingHome = () => {
+const BookingHome = ({navigation}) => {
     const [search, setSearch] = useState('');
     const [activeTab, setActiveTab] = useState('ready');
 
@@ -29,6 +29,9 @@ const BookingHome = () => {
             <TopHeader
               title={'Bookings'}
               childBack={<Calendar/>}
+              onPressRight={() => {
+                navigation.navigate('BookingCalendar')
+              }}
             />
 
             {/* Search */}

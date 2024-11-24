@@ -9,7 +9,7 @@ import ImagePicker from '../../../../../components/ImagePicker';
 import ImageViewerCard from '../../../../../components/ImageViewerCard';
 import AddOptionButton from '../../../../../components/Button/AddOptionButton';
 
-const BookingReadyToCheckIn = () => {
+const BookingReadyToCheckIn = ({ navigation }) => {
     const [selectedImageUri, setSelectedImageUri] = useState(null);
   return (
     <SafeAreaView style={styles.root}>
@@ -20,7 +20,8 @@ const BookingReadyToCheckIn = () => {
           {/* Header */}
           <TopHeader 
             title={'Booking'} 
-            childFront={<BackArrow />} 
+            childFront={<BackArrow/>} 
+            onPressLeft={() => navigation.goBack()}
           />
 
           {/* Confirmaed Data */}
@@ -88,7 +89,7 @@ const BookingReadyToCheckIn = () => {
             <PrimaryButton
               title="Confirm Check-in"
               onPress={() => {
-                console.log('Done');
+                navigation.navigate('BookingConfirm');
               }}
             />
           </View>

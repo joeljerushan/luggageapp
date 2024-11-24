@@ -37,7 +37,7 @@ const BottomTab = () => {
     >
         {/* Home */}
         <Tab.Screen 
-          name="Home" 
+          name="HomeScreenStack" 
           component={HomeStack} 
           options={() => ({
             tabBarIcon: ({ focused }) => (
@@ -55,7 +55,7 @@ const BottomTab = () => {
         />
         {/* Booking */}
         <Tab.Screen 
-          name="Booking" 
+          name="BookingScreenStack" 
           component={BookingStack} 
           options={() => ({
             tabBarIcon: ({ focused }) => (
@@ -73,7 +73,7 @@ const BottomTab = () => {
         />
         {/* DashBoard */}
         <Tab.Screen 
-          name="DashBoard" 
+          name="DashBoardScreenStack" 
           component={DashBoardStack} 
           options={() => ({
             tabBarIcon: ({ focused }) => (
@@ -91,7 +91,7 @@ const BottomTab = () => {
         />
         {/* Earning */}
         <Tab.Screen 
-          name="Earning" 
+          name="EarningScreenStack" 
           component={EarningStack} 
           options={() => ({
             tabBarIcon: ({ focused }) => (
@@ -109,7 +109,7 @@ const BottomTab = () => {
         />
         {/* Account */}
         <Tab.Screen 
-          name="Account" 
+          name="AccountScreenStack" 
           component={AccountStack} 
           options={() => ({
             tabBarIcon: ({ focused }) => (

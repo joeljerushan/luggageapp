@@ -11,12 +11,18 @@ const HomeHeader = (props) => {
         title,
         onPressSearch,
         onPressScanQr,
+        onPressNotification,
     } = props;
   return ( 
     <View style = {styles.container}>
       {/* Notification & Search */}
       <View style = {styles.notificationSearchContainer}>
-        <NotificationSvg/>
+      <TouchableOpacity
+          activeOpacity={0.5}
+          onPress={onPressNotification}
+        >
+            <NotificationSvg/>
+        </TouchableOpacity>
         {/* Search */}
         <TouchableOpacity
           activeOpacity={0.5}
@@ -44,6 +50,7 @@ HomeHeader.propTypes = {
     title: PropTypes.string,
     onPressSearch: PropTypes.func,
     onPressScanQr: PropTypes.func,
+    onPressNotification: PropTypes.func,
   };
 
 export default HomeHeader;

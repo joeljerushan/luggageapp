@@ -1,7 +1,6 @@
 import {SafeAreaView, ScrollView, Text, View} from 'react-native';
 import React, { useState } from 'react';
 import {styles} from './styles';
-import ReadyToCheckInList from '../../../../../components/ReadyToCheckInList';
 import BackArrow from '@/assets/icons/ArrowSquareLeft-Linear.svg';
 import TopHeader from '../../../../../components/TopHeader';
 import PrimaryButton from '../../../../../components/Button/PrimaryButton';
@@ -10,7 +9,7 @@ import ImageViewerCard from '../../../../../components/ImageViewerCard';
 import AddOptionButton from '../../../../../components/Button/AddOptionButton';
 import CheckedInList from '../../../../../components/CheckedInList';
 
-const BookingCheckedIn = () => {
+const BookingCheckedIn = ({ navigation }) => {
     const [selectedImageUri, setSelectedImageUri] = useState(null);
   return (
     <SafeAreaView style={styles.root}>
@@ -22,6 +21,7 @@ const BookingCheckedIn = () => {
           <TopHeader 
             title={'Booking'} 
             childFront={<BackArrow />} 
+            onPressLeft={() => navigation.goBack()}
           />
 
           {/* Confirmaed Data */}
@@ -89,7 +89,7 @@ const BookingCheckedIn = () => {
             <PrimaryButton
               title="Check out"
               onPress={() => {
-                console.log('Check out');
+                navigation.navigate('BookingConfirm');
               }}
             />
           </View>
