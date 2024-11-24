@@ -26,7 +26,7 @@ export const styles = StyleSheet.create({
     },
     cameraView: {
         width: '100%',
-        height:'100%',
+        height: '100%',
         borderRadius: 10,
     },
     tabButton: {

@@ -23,6 +23,9 @@ target 'Luggage_App' do
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
 
+  # Add the react-native-camera pod here
+  pod 'react-native-camera', :path => '../node_modules/react-native-camera'
+
   target 'Luggage_AppTests' do
     inherit! :complete
     # Pods for testing
