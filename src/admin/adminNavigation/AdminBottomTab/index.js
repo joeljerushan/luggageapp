@@ -1,24 +1,24 @@
 import { Text, View } from 'react-native'
 import React from 'react'
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import HomeStack from '../stack/AppStack/HomeStack';
 import HomeSvg from '@/assets/icons/BottomSvg/Home.svg';
 import BookingSvg from '@/assets/icons/BottomSvg/Booking.svg';
 import DashBoardSvg from '@/assets/icons/BottomSvg/DashBoard.svg';
 import EarningSvg from '@/assets/icons/BottomSvg/Earning.svg';
 import AccountSvg from '@/assets/icons/BottomSvg/Account.svg';
-import { hp, wp } from "../../utils/Scaling";
+import { hp, wp } from "../../../utils/Scaling";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { styles } from './styles';
-import BookingStack from '../stack/AppStack/BookingStack';
-import DashBoardStack from '../stack/AppStack/DashBoardStack';
-import EarningStack from '../stack/AppStack/EarningStack';
 import { ColorSheet } from '@/utils/ColorSheet';
-import AccountStack from '../stack/AppStack/AccountStack';
+import HomeAdminStack from '../AdminStack/AppStack/HomeAdminStack';
+import BookingAdminStack from '../AdminStack/AppStack/BookingAdminStack';
+import DashBoardAdminStack from '../AdminStack/AppStack/DashboardAdminStack';
+import EarningAdminStack from '../AdminStack/AppStack/EarningAdminStack';
+import AccountAdminStack from '../AdminStack/AppStack/AccountAdminStack';
+import { styles } from './styles';
 
 const Tab = createBottomTabNavigator()
 
-const BottomTab = () => {
+const AdminBottomTab = () => {
     const insets = useSafeAreaInsets();
   return (
     <Tab.Navigator
@@ -37,8 +37,8 @@ const BottomTab = () => {
     >
         {/* Home */}
         <Tab.Screen 
-          name="HomeScreenStack" 
-          component={HomeStack} 
+          name="HomeAdminScreenStack" 
+          component={HomeAdminStack} 
           options={() => ({
             tabBarIcon: ({ focused }) => (
                 <View
@@ -55,8 +55,8 @@ const BottomTab = () => {
         />
         {/* Booking */}
         <Tab.Screen 
-          name="BookingScreenStack" 
-          component={BookingStack} 
+          name="BookingAdminScreenStack" 
+          component={BookingAdminStack} 
           options={() => ({
             tabBarIcon: ({ focused }) => (
                 <View
@@ -73,8 +73,8 @@ const BottomTab = () => {
         />
         {/* DashBoard */}
         <Tab.Screen 
-          name="DashBoardScreenStack" 
-          component={DashBoardStack} 
+          name="DashBoardAdminScreenStack" 
+          component={DashBoardAdminStack} 
           options={() => ({
             tabBarIcon: ({ focused }) => (
                 <View
@@ -91,8 +91,8 @@ const BottomTab = () => {
         />
         {/* Earning */}
         <Tab.Screen 
-          name="EarningScreenStack" 
-          component={EarningStack} 
+          name="EarningAccountScreenStack" 
+          component={EarningAdminStack} 
           options={() => ({
             tabBarIcon: ({ focused }) => (
                 <View
@@ -109,8 +109,8 @@ const BottomTab = () => {
         />
         {/* Account */}
         <Tab.Screen 
-          name="AccountScreenStack" 
-          component={AccountStack} 
+          name="AccountAdminScreenStack" 
+          component={AccountAdminStack} 
           options={() => ({
             tabBarIcon: ({ focused }) => (
                 <View
@@ -130,4 +130,4 @@ const BottomTab = () => {
   )
 }
 
-export default BottomTab;
+export default AdminBottomTab;

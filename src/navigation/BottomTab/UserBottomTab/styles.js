@@ -1,7 +1,7 @@
-import { hp, wp } from "../../utils/Scaling";
 import { StyleSheet } from "react-native";
 import { RFValue } from "react-native-responsive-fontsize";
-import { ColorSheet } from "../../utils/ColorSheet";
+import { hp, wp } from "../../../utils/Scaling";
+import { ColorSheet } from "../../../utils/ColorSheet";
 
 export const styles = StyleSheet.create({
   IconContainer: {

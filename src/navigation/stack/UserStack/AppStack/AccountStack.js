@@ -1,7 +1,7 @@
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack';
-import AccountStore from '../../../screens/App/Account/Pages/AccountStore';
-import Notifications from '../../../screens/App/Account/Pages/Notification';
+import AccountStore from '../../../../screens/App/Account/Pages/AccountStore';
+import Notifications from '../../../../screens/App/Account/Pages/Notification';
 
 const Stack = createStackNavigator();
 

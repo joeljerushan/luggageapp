@@ -1,6 +1,6 @@
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack';
-import DashBoardQrScreen from '../../../screens/App/DashBoard/Pages/DashBoardQR';
+import DashBoardQrScreen from '../../../../screens/App/DashBoard/Pages/DashBoardQR';
 
 const Stack = createStackNavigator();
 

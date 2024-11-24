@@ -1,10 +1,11 @@
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack';
-import BookingHome from '../../../screens/App/Booking/Pages/BookingHome';
-import BookingConfirm from '../../../screens/App/Booking/Pages/BookingConfirm';
-import BookingCalendar from '../../../screens/App/Booking/Pages/BookingCalendar';
-import BookingReadyToCheckIn from '../../../screens/App/Booking/Pages/BookingReadyToCheckIn';
-import BookingCheckedIn from '../../../screens/App/Booking/Pages/BookinCheckedIn';
+import BookingCalendar from '../../../../screens/App/Booking/Pages/BookingCalendar';
+import BookingConfirm from '../../../../screens/App/Booking/Pages/BookingConfirm';
+import BookingReadyToCheckIn from '../../../../screens/App/Booking/Pages/BookingReadyToCheckIn';
+import BookingCheckedIn from '../../../../screens/App/Booking/Pages/BookinCheckedIn';
+import BookingHome from '../../../../screens/App/Booking/Pages/BookingHome';
+
 
 const Stack = createStackNavigator();
 
