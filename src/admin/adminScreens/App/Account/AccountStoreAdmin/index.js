@@ -1,17 +1,33 @@
-import {FlatList, SafeAreaView, ScrollView, Text, View} from 'react-native';
+import {
+  FlatList,
+  SafeAreaView,
+  ScrollView,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import React, {useState} from 'react';
 import TopHeader from '../../../../../components/TopHeader';
+import BackArrow from '@/assets/icons/ArrowSquareLeft-Linear.svg';
 import ImageTitleCard from '../../../../../components/ImageTitleCard';
 import DatePicker from '../../../../../components/Input/DatePicker';
-import {styles} from './styles';
 import AddOptionButton from '../../../../../components/Button/AddOptionButton';
-import DropDrownView from '../../../../../components/Input/DropDownView';
+import AdminDropDrownView from '../../../../adminComponent/Input';
+import {styles} from './styles';
 
-const EarningStore01 = () => {
+const AccountStoreAdmin = ({ navigation }) => {
   const [selectDay, setSelectDay] = useState({
     label: '',
     value: '',
   });
+
+  const handleOnPress = (item) => {
+    if (item.title == 'Employee 01') {
+      navigation.navigate('EarningAccountScreenStack', {
+        screen: 'AdminEarningEmployee',
+      });
+    }
+  }
   return (
     <SafeAreaView style={styles.root}>
       <ScrollView
@@ -19,7 +35,10 @@ const EarningStore01 = () => {
         contentContainerStyle={styles.contentContainerScroll}>
         <View style={styles.mainContainer}>
           {/* header */}
-          <TopHeader title={'Store'} />
+          <TopHeader 
+            title={'Store'} 
+            childFront={<BackArrow />}
+          />
 
           {/* Image Title card */}
           <ImageTitleCard
@@ -33,14 +52,23 @@ const EarningStore01 = () => {
           <AddOptionButton title="Earnings" type="bag" />
 
           {/* website */}
-          <AddOptionButton title="Website" type="bag" />
+          <AddOptionButton 
+            title="Website" 
+            type="bag" 
+            onPress={() => {
+              navigation.navigate('EarningAccountScreenStack', {
+                screen: 'AdminEarningWebsite',
+              })
+            }}
+          />
 
           {/* Employee */}
-          <AddOptionButton title="Employee" type="bag" />
+          <AddOptionButton 
+            title="Employee" type="bag" />
 
           <View style={styles.dropDownCalendarContainer}>
             {/* DropDown */}
-            <DropDrownView
+            <AdminDropDrownView
               style={styles.dropDownStyle}
               data={data}
               value={selectDay.value}
@@ -59,10 +87,15 @@ const EarningStore01 = () => {
             showsVerticalScrollIndicator={false}
             renderItem={({item}) => {
               return (
-                <View style={styles.storeDataContainer}>
+                <TouchableOpacity
+                  style={styles.storeDataContainer}
+                  activeOpacity={0.5}
+                  onPress={() => {
+                    handleOnPress(item)
+                  }}>
                   <Text style={styles.storeDataTitle}>{item.title}</Text>
                   <Text style={styles.storeDataValue}>{item.value}</Text>
-                </View>
+                </TouchableOpacity>
               );
             }}
           />
@@ -72,7 +105,7 @@ const EarningStore01 = () => {
   );
 };
 
-export default EarningStore01;
+export default AccountStoreAdmin;
 
 const userData = {
   image:
@@ -114,7 +147,7 @@ const storeData = [
   },
   {
     id: 4,
-    title: 'Bags not collected',
+    title: 'Employee 01',
     value: '10',
   },
   {

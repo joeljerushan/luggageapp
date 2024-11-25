@@ -1,11 +1,12 @@
 import {FlatList, SafeAreaView, ScrollView, Text, View} from 'react-native';
 import React, {useState} from 'react';
+import AdminDropDrownView from '../../../../adminComponent/Input';
 import TopHeader from '../../../../../components/TopHeader';
+import BackArrow from '@/assets/icons/ArrowSquareLeft-Linear.svg';
 import DatePicker from '../../../../../components/Input/DatePicker';
-import {styles} from './styles';
-import DropDrownView from '../../../../../components/Input/DropDownView';
+import { styles } from './styles';
 
-const EarningEmployee01 = () => {
+const AdminEarningEmployee = () => {
   const [selectDay, setSelectDay] = useState({
     label: '',
     value: '',
@@ -17,11 +18,14 @@ const EarningEmployee01 = () => {
         contentContainerStyle={styles.contentContainerScroll}>
         <View style={styles.mainContainer}>
           {/* header */}
-          <TopHeader title={'Employee 01'} />
+          <TopHeader 
+            title={'Employee 01'} 
+            childFront={<BackArrow />}
+          />
 
           <View style={styles.dropDownCalendarContainer}>
             {/* DropDown */}
-            <DropDrownView
+            <AdminDropDrownView
               style={styles.dropDownStyle}
               data={data}
               value={selectDay.value}
@@ -53,7 +57,7 @@ const EarningEmployee01 = () => {
   );
 };
 
-export default EarningEmployee01;
+export default AdminEarningEmployee;
 
 const data = [
   {

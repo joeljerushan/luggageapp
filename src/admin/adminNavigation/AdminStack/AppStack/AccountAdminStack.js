@@ -1,19 +1,18 @@
-import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack';
-import AccountAdmin from '../../../adminScreens/App/Account';
+import AccountStoreAdmin from '../../../adminScreens/App/Account/AccountStoreAdmin';
 
 const Stack = createStackNavigator();
 
 const AccountAdminStack = () => {
   return (
     <Stack.Navigator
-        initialRouteName="AccountAdmin"
+        initialRouteName="AccountStoreAdmin"
         screenOptions={{
             headerShown: false
         }}
-    >
-        <Stack.Screen name="AccountAdmin" component={AccountAdmin} />
+    >        
+      <Stack.Screen name="AccountStoreAdmin" component={AccountStoreAdmin} />
     </Stack.Navigator>
   )
 }

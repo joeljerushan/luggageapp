@@ -13,8 +13,8 @@ import HomeAdminStack from '../AdminStack/AppStack/HomeAdminStack';
 import BookingAdminStack from '../AdminStack/AppStack/BookingAdminStack';
 import DashBoardAdminStack from '../AdminStack/AppStack/DashboardAdminStack';
 import EarningAdminStack from '../AdminStack/AppStack/EarningAdminStack';
-import AccountAdminStack from '../AdminStack/AppStack/AccountAdminStack';
 import { styles } from './styles';
+import AccountAdminStack from '../AdminStack/AppStack/AccountAdminStack';
 
 const Tab = createBottomTabNavigator()
 

@@ -3,6 +3,7 @@ import React from 'react';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import FlashMessage from 'react-native-flash-message';
 import { SafeAreaProvider } from 'react-native-safe-area-context';  // Import SafeAreaProvider
+import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 import Routes from './src/navigation/routes';
 
 const App = () => {
@@ -15,7 +16,9 @@ const App = () => {
           floating
           statusBarHeight={Platform.OS === 'ios' ? 5 : 7}
         />
-        <Routes />
+        <BottomSheetModalProvider>
+          <Routes />
+        </BottomSheetModalProvider>
       </GestureHandlerRootView>
     </SafeAreaProvider>
   );

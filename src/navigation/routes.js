@@ -5,7 +5,7 @@ import AdminBottomTab from '../admin/adminNavigation/AdminBottomTab';
 
 
 const Routes = () => {
-  const [isAdmin, setIsAdmin] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(true);
   return (
     <NavigationContainer>
         {isAdmin ? <AdminBottomTab/> : <UserBottomTab /> }

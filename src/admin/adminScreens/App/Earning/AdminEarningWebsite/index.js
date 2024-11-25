@@ -1,16 +1,17 @@
 import {FlatList, SafeAreaView, ScrollView, Text, View} from 'react-native';
 import React, {useState} from 'react';
 import TopHeader from '../../../../../components/TopHeader';
-import CustomDropDown from '../../../../../components/Input/CustomDropDown';
+import BackArrow from '@/assets/icons/ArrowSquareLeft-Linear.svg';
+import AdminDropDrownView from '../../../../adminComponent/Input';
 import DatePicker from '../../../../../components/Input/DatePicker';
-import {styles} from './styles';
-import DropDrownView from '../../../../../components/Input/DropDownView';
+import { styles } from './styles';
 
-const EarningWebsite = () => {
+const AdminEarningWebsite = ({ navigation }) => {
   const [selectDay, setSelectDay] = useState({
     label: '',
     value: '',
   });
+  const [selectdate, setSelectDate] = useState('');
   return (
     <SafeAreaView style={styles.root}>
       <ScrollView
@@ -18,11 +19,15 @@ const EarningWebsite = () => {
         contentContainerStyle={styles.contentContainerScroll}>
         <View style={styles.mainContainer}>
           {/* header */}
-          <TopHeader title={'Website'} />
+          <TopHeader 
+            title={'Website'} 
+            childFront={<BackArrow />}
+            onPressLeft={() => navigation.goBack()}
+          />
 
           <View style={styles.dropDownCalendarContainer}>
             {/* DropDown */}
-            <DropDrownView
+            <AdminDropDrownView
               style={styles.dropDownStyle}
               data={data}
               value={selectDay.value}
@@ -30,7 +35,12 @@ const EarningWebsite = () => {
               placeholder="Select"
             />
             {/* Calendar */}
-            <DatePicker />
+            <DatePicker
+              onSelectDate={() => {
+                console.log('selectdate', selectdate);
+                setSelectDate();
+              }}
+            />
           </View>
 
           {/* Store Data */}
@@ -54,7 +64,7 @@ const EarningWebsite = () => {
   );
 };
 
-export default EarningWebsite;
+export default AdminEarningWebsite;
 
 const data = [
   {

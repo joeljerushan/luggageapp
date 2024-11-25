@@ -2,24 +2,21 @@ import {
   Alert,
   SafeAreaView,
   ScrollView,
-  TouchableOpacity,
   View,
-  Platform,
 } from 'react-native';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {styles} from './styles';
 import HomeHeader from '../../../../../components/HomeHeader';
 import HomeToday from '../HomeToday';
 import HomeUpComing from '../HomeUpcoming';
-import {RNCamera} from 'react-native-camera';
-import {request, PERMISSIONS, RESULTS} from 'react-native-permissions';
-import HomePast from '../HomePast';
+import { Camera } from 'react-native-vision-camera'; // Import Vision Cameraimport HomePast from '../HomePast';
 import HomeTabButton from '../../../../../components/HomeTabButton';
 import AsyncStorage from '@react-native-async-storage/async-storage'; // Import AsyncStorage
 
 const HomeKingsCrossLuggage = ({navigation}) => {
   const [activeTab, setActiveTab] = useState('today');
   const [cameraVisible, setCameraVisible] = useState(false); // Controls camera visibility
+  const [hasPermission, setHasPermission] = useState(false); // For permission handling
   const [lastScannedQR, setLastScannedQR] = useState(null); // Save the last scanned QR
 
   const handleTabPress = tab => {
@@ -28,29 +25,29 @@ const HomeKingsCrossLuggage = ({navigation}) => {
   };
 
   // Request camera permission
-  const requestCameraPermission = async () => {
-    try {
-      const result = await request(
-        Platform.OS === 'android'
-          ? PERMISSIONS.ANDROID.CAMERA
-          : PERMISSIONS.IOS.CAMERA,
-      );
-      if (result === RESULTS.GRANTED) {
-        setCameraVisible(true);
+  useEffect(() => {
+    const requestCameraPermission = async () => {
+      const cameraPermission = await Camera.requestCameraPermission();
+      const microphonePermission = await Camera.requestMicrophonePermission();
+
+      if (cameraPermission === 'authorized' && microphonePermission === 'authorized') {
+        setHasPermission(true);
       } else {
         Alert.alert(
           'Permission Denied',
-          'Camera access is required to scan QR codes.',
+          'Camera access is required to scan QR codes.'
         );
       }
-    } catch (error) {
-      console.warn('Permission error:', error);
+    };
+
+    if (cameraVisible) {
+      requestCameraPermission(); // Only request when camera is visible
     }
-  };
+  }, [cameraVisible]);
 
   // Handle QR code scanning
   const onBarcodeRead = event => {
-    const qrCode = event.data;
+    const qrCode = event.nativeEvent.codeStringValue;
     console.log('QR code scanned:', qrCode);
     saveQRKey(qrCode);
     setCameraVisible(false); // Close camera after scanning
@@ -71,8 +68,10 @@ const HomeKingsCrossLuggage = ({navigation}) => {
   const handleScanQrPress = () => {
     if (cameraVisible) {
       setCameraVisible(false); // Close camera if it's already visible
+    } else if (hasPermission) {
+      setCameraVisible(true); // Open camera if permission is granted
     } else {
-      requestCameraPermission(); // Open camera if permission granted
+      Alert.alert('Permission required', 'Camera permission is required to scan QR codes.');
     }
   };
 
@@ -96,14 +95,13 @@ const HomeKingsCrossLuggage = ({navigation}) => {
           />
           
           {/* Open Camera Gray View */}
-          {cameraVisible && (
+          {cameraVisible && hasPermission && (
             <View style={styles.grayView}>
-              <RNCamera
+              <Camera
                 style={styles.cameraView}
-                onBarCodeRead={onBarcodeRead}
-                captureAudio={false} // Disable audio capture
-                type={RNCamera.Constants.Type.back} // Use back camera
-                flashMode={RNCamera.Constants.FlashMode.off} // Optionally turn off flash
+                device={Camera.getAvailableCameraDevices()[0]} // Use back camera
+                isActive={cameraVisible} // Camera is active only when visible
+                onCodesScanned={onBarcodeRead} // Handle barcode scan
               />
             </View>
           )}
