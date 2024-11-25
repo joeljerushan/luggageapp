@@ -14,7 +14,7 @@ const HomeAdminAllStorePopUp = props => {
   const {bottomSheetModalRef, onPress} = props;
 
   const snapPoint = useMemo(
-    () => [Platform.OS == 'android' ? '75%' : '75%'],
+    () => [Platform.OS == 'android' ? '85%' : '85%'],
     [],
   );
 
