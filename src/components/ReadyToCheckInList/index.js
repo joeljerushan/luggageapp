@@ -54,8 +54,10 @@ const ReadyToCheckInList = props => {
             <Text
               style={
                 styles.dataTitle
-              }>{`${pickUp?.time} - ${pickUp?.date}`}</Text>
-            <Text style={styles.dateText}>{'9.00 AM - 02/11'}</Text>
+              }>{'Pick-Up'}</Text>
+            <Text style={styles.dateText}>
+              {`${pickUp?.time} - ${pickUp?.date}`}
+            </Text>
           </View>
         </View>
         {/* rowContainer ---- 2 */}

@@ -42,6 +42,7 @@ const HomePast = () => {
       />
       {/* Checked In */}
       <FlatList
+        scrollEnabled={false}
         data={checkedInData}
         renderItem={({item}) => {
           return (
