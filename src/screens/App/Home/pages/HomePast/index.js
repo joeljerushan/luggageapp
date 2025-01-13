@@ -1,11 +1,30 @@
 import { FlatList, Text, View } from 'react-native'
-import React from 'react'
+import React, { useEffect } from 'react'
 import ReadyToCheckInList from '../../../../../components/ReadyToCheckInList'
 import { styles } from './styles'
 import CheckedInList from '../../../../../components/CheckedInList'
 import CompeletedList from '../../../../../components/CompeletedList'
+import { selectHomeLuggageGetPastData } from '../../../../../features/user/slices/home_slice'
+import { useAppDispatch, useAppSelector } from '../../../../../features/user/stateHooks'
+import { requestHomeLuggageGetPastDataThunk } from '../../../../../features/user/thunks/home_thunks'
 
 const HomePast = () => {
+  const dispatch = useAppDispatch()
+
+  const homeLuggageGetPastData = useAppSelector(selectHomeLuggageGetPastData)
+  console.log('homeLuggageGetPastData^^^^^^^^', homeLuggageGetPastData);
+  console.log('homeLuggageGetPastData^^^^^Oders^^^', homeLuggageGetPastData?.data?.orders);
+  
+
+  // Api Call Home Luggage Get Past Data -----
+  useEffect(() => {
+    const params = {
+      period: 'past'
+    }
+    dispatch(requestHomeLuggageGetPastDataThunk(params))
+  }, []);
+  // End Api Call Home Luggage Get Past Data ----
+  
   return (
     <View style = {styles.root}>
       {/* Ready To Check In List */}
