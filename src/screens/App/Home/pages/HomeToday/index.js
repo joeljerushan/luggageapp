@@ -1,13 +1,27 @@
 import { FlatList, Text, View } from 'react-native'
-import React from 'react'
+import React, { useEffect } from 'react'
 import ReadyToCheckInList from '../../../../../components/ReadyToCheckInList'
 import { styles } from './styles'
 import CheckedInList from '../../../../../components/CheckedInList'
 import CompeletedList from '../../../../../components/CompeletedList'
 import { useNavigation } from '@react-navigation/native'
+import { useAppDispatch, useAppSelector } from '../../../../../features/user/stateHooks'
+import { selectHomeLuggageGetTodayData } from '../../../../../features/user/slices/home_slice'
+import { requestHomeLuggageGetTodayDataThunk } from '../../../../../features/user/thunks/home_thunks'
 
 const HomeToday = () => {
   const navigation = useNavigation();
+
+  const dispatch = useAppDispatch();
+
+  const homeLuggageGetTodayData = useAppSelector(selectHomeLuggageGetTodayData);
+  console.log('homeLuggageGetTodayData---', homeLuggageGetTodayData);
+  
+  // Api Call 
+  useEffect(() => {
+    dispatch(requestHomeLuggageGetTodayDataThunk());
+  }, []);
+
   return (
     <View style = {styles.root}>
       {/* Ready To Check In List */}
@@ -77,7 +91,7 @@ const readyToCheckIn =
 {
   id: 1,
   status: 'READY TO CHECK IN',
-  name: 'James Bond',
+  name: 'James Bond Alex',
   dropOff: {
     time: '9.00 AM',
     date: '02/11'
